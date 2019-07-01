@@ -14,7 +14,7 @@ class GameDataProvider extends React.Component {
       startTiles: constants.gameData.startTiles,
       grid: null,
       score: 0,
-      bestScore: 0,
+      bestScore: '0',
       over: false,
       won: false,
       terminated: false,
