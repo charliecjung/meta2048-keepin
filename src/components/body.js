@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import constants from '../constants';
+import Game from './gameContainer';
 
 class Body extends React.Component {
   state = {
@@ -13,11 +11,11 @@ class Body extends React.Component {
 
     switch (topic) {
       case 'game':
-        break;
+        return <Game startType="new" />;
       case 'auth':
-        break;
+        return null;
       default:
-        break;
+        return null;
     }
   }
 

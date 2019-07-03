@@ -12,9 +12,9 @@ class GameDataProvider extends React.Component {
     gameData: Map({
       gameSize: constants.gameData.gameSize,
       startTiles: constants.gameData.startTiles,
-      grid: null,
+      grid: { size: null, cell: null },
       score: 0,
-      bestScore: '0',
+      bestScore: 0,
       over: false,
       won: false,
       terminated: false,

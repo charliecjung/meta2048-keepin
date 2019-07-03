@@ -21,7 +21,7 @@ const Header = ({ score, bestScore }) => (
 
 Header.propTypes = {
   score: PropTypes.number.isRequired,
-  bestScore: PropTypes.string.isRequired,
+  bestScore: PropTypes.number.isRequired,
 };
 
 export default useGameData(({ state }) => ({
