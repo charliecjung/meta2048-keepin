@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useGameState } from '../context/gameState';
 import GameContainer from './gameContainer';
+import GameNav from './gameNav';
 import constants from '../constants';
 
 class Body extends React.Component {
@@ -20,7 +21,12 @@ class Body extends React.Component {
       case constants.gameStateTopic.gameRestart:
       case constants.gameStateTopic.gameStart:
       case constants.gameStateTopic.gameLoad:
-        return <GameContainer startType={topic} />;
+        return (
+          <React.Fragment>
+            <GameContainer startType={topic} />
+            <GameNav />
+          </React.Fragment>
+        );
       case 'auth':
         return null;
       default:

@@ -5,13 +5,12 @@ import { useGameState } from '../context/gameState';
 import constants from '../constants';
 
 const GameNav = ({ setTopic }) => (
-  <div className="gameNav">
-    <button
-      type="button"
-      className="btn"
-      onClick={() => setTopic(constants.gameStateTopic.gameStart)}
-    >
-      LETS START
+  <div className="game-nav">
+    <button type="button" className="score-board btn">
+      SCORE BOARD
+    </button>
+    <button type="button" className="share-game btn">
+      SHARE GAME
     </button>
   </div>
 );

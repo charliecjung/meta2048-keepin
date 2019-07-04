@@ -16,7 +16,7 @@ const Header = ({ setTopic }) => {
       <div className="heading">
         <button
           type="button"
-          className="restart-btn"
+          className="restart-btn btn"
           onClick={event => onClick(event, constants.gameStateTopic.gameRestart)}
         />
         <ScoreContainer />
