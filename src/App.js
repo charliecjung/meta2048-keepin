@@ -2,17 +2,21 @@ import React from 'react';
 
 import './App.css';
 import { GameDataProvider } from './context/gameData';
-import Header from './components/header';
+import { GameStateProvider } from './context/gameState';
+import Header from './components/header/index';
 import Body from './components/body';
+
+// eslint-disable-next-line max-len
+const AppProvider = ({ contexts, children }) => contexts.reduce((prev, context) => React.createElement(context, {}, prev), children);
 
 function App() {
   return (
-    <GameDataProvider>
+    <AppProvider contexts={[GameDataProvider, GameStateProvider]}>
       <div className="container">
         <Header />
         <Body />
       </div>
-    </GameDataProvider>
+    </AppProvider>
   );
 }
 

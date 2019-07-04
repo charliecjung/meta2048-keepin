@@ -27,13 +27,6 @@ class GameDataProvider extends React.Component {
     stopGame: isTerminate => this.stopGame(isTerminate),
   };
 
-  constructor(props) {
-    super(props);
-    this.updateGameData = this.updateGameData.bind(this);
-    this.isTerminated = this.isTerminated.bind(this);
-    this.stopGame = this.stopGame.bind(this);
-  }
-
   updateGameData(_state) {
     const { gameData } = this.state;
     this.setState(
@@ -46,7 +39,7 @@ class GameDataProvider extends React.Component {
           .update('won', won => (typeof _state.won === 'boolean' ? _state.won : won))
           .update('keepPlaying', keepPlaying => (typeof _state.keepPlaying === 'boolean' ? _state.keepPlaying : keepPlaying)),
       },
-      this.isTerminated,
+      () => this.isTerminated(),
     );
   }
 
@@ -58,6 +51,7 @@ class GameDataProvider extends React.Component {
   }
 
   stopGame(isTerminate) {
+    if (typeof isTerminate !== 'boolean') return;
     const { gameData } = this.state;
     this.setState({ gameData: gameData.set('terminated', isTerminate) });
   }

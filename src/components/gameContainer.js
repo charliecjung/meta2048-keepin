@@ -7,10 +7,20 @@ import Grid from '../game/grid';
 import Tile from '../game/tile';
 import KeyboardInputManager from '../game/keyboardInputManager';
 import Actuator from '../game/actuator';
+import constants from '../constants';
 
-class Game extends React.Component {
+class GameContainer extends React.Component {
   componentDidMount() {
+    this.inputManager = new KeyboardInputManager(this.move.bind(this));
+    this.actuator = new Actuator(this.tileContainer);
+
     window.requestAnimationFrame(() => this.initGame());
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.startType === constants.gameStateTopic.gameRestart) {
+      window.requestAnimationFrame(() => this.setupGame());
+    }
   }
 
   setupGame() {
@@ -39,18 +49,9 @@ class Game extends React.Component {
 
   initGame() {
     const { startType } = this.props;
-    this.inputManager = new KeyboardInputManager(this.move.bind(this));
-    this.actuator = new Actuator(this.tileContainer);
 
-    switch (startType) {
-      case 'load':
-        this.loadGame();
-        break;
-      case 'new':
-      default:
-        this.setupGame();
-        break;
-    }
+    if (startType === constants.gameStateTopic.gameStart) this.setupGame();
+    else if (startType === constants.gameStateTopic.gameLoad) this.loadGame();
   }
 
   addStartTiles() {
@@ -250,7 +251,7 @@ class Game extends React.Component {
   }
 }
 
-Game.propTypes = {
+GameContainer.propTypes = {
   startType: PropTypes.string.isRequired,
   gameSize: PropTypes.number.isRequired,
   startTiles: PropTypes.number.isRequired,
@@ -275,4 +276,4 @@ export default useGameData(({ state, actions }) => ({
   terminated: state.terminated,
   keepPlaying: state.keepPlaying,
   updateGameData: actions.updateGameData,
-}))(Game);
+}))(GameContainer);
