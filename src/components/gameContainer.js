@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useGameData } from '../context/gameData';
+import { useGameData } from '../Context/gameData';
 import * as util from '../util';
 import Grid from '../game/grid';
 import Tile from '../game/tile';

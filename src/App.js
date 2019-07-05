@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './App.css';
-import { GameDataProvider } from './context/gameData';
-import { GameStateProvider } from './context/gameState';
+import { GameDataProvider } from './Context/gameData';
+import { GameStateProvider } from './Context/gameState';
 import Header from './components/header/index';
 import Body from './components/body';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useGameData } from '../../context/gameData';
+import { useGameData } from '../../Context/gameData';
 
 const ScoreContainer = ({ score, bestScore }) => (
   <div className="scores-container">

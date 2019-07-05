@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import constants from '../../constants';
-import { useGameState } from '../../context/gameState';
+import { useGameState } from '../../Context/gameState';
 import ScoreContainer from './scoreContainer';
 
 const Header = ({ setTopic }) => {

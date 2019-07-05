@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useGameState } from '../context/gameState';
+import { useGameState } from '../Context/gameState';
 import GameContainer from './gameContainer';
 import GameNav from './gameNav';
 import constants from '../constants';
