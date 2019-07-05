@@ -3,7 +3,7 @@ const constants = {
     gameSize: 4,
     startTiles: 2,
   },
-  haeder: {
+  header: {
     title: '2048',
     intro: 'Move tiles and merge same number in to one! Get to the 2048',
   },

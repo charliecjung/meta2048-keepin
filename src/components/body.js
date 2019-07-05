@@ -9,6 +9,7 @@ import constants from '../constants';
 class Body extends React.Component {
   componentDidUpdate() {
     const { topic, setTopic } = this.props;
+    alert("updated topic: " + topic)
     if (topic === constants.gameStateTopic.gameRestart) {
       setTopic(constants.gameStateTopic.gameStart);
     }
@@ -16,22 +17,38 @@ class Body extends React.Component {
 
   showComponent() {
     const { topic } = this.props;
+    alert("showComponent() topic: " + topic)
     switch (topic) {
       case constants.gameStateTopic.gameReady:
+        alert("Alpha")
+        break;
       case constants.gameStateTopic.gameRestart:
+        alert("Bravo")
+        break;
       case constants.gameStateTopic.gameStart:
+        alert("Charlie")
+        break;
       case constants.gameStateTopic.gameLoad:
-        return (
-          <React.Fragment>
-            <GameContainer startType={topic} />
-            <GameNav />
-          </React.Fragment>
-        );
+        alert("David")
+        break;
       case 'auth':
-        return null;
+        alert("Ethan")
+        break;
+      case 'DARS':
+        alert("DARS")
+        break;
       default:
-        return null;
+        alert("father")
+        console.log('Your topic is UNDEFINED or a test value. Please set it to the appropriate value above.')
+        break;
     }
+    alert("returning")
+    return (
+      <React.Fragment>
+        <GameContainer startType={topic} />
+        <GameNav />
+      </React.Fragment>
+    );
   }
 
   render() {

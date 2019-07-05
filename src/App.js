@@ -6,6 +6,7 @@ import { GameStateProvider } from './Context/gameState';
 import Header from './components/header/index';
 import Body from './components/body';
 
+
 // eslint-disable-next-line max-len
 const AppProvider = ({ contexts, children }) => contexts.reduce((prev, context) => React.createElement(context, {}, prev), children);
 
