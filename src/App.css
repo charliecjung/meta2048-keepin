@@ -1,5 +1,44 @@
 @import url(fonts/clear-sans.css);
 html,
+
+
+
+ .padding-table-columns td {
+  padding:0 20px 0 0;
+}
+ .spacing-table-columns table {
+  border-spacing: 100px 0px;
+  padding:0 20px 0 0;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+
+td {
+  margin: 0;
+  padding: 0;
+  border: 2px solid black;
+  padding: 4px 17px;
+  width: 100%;
+  float:center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  background: #f0f4fc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -59,7 +98,7 @@ body {
   border: none;
 }
 
-.restart-btn {
+.restart {
   position: relative;
   display: inline;
   border: none;
@@ -676,7 +715,8 @@ hr {
 }
 
 .score-board,
-.share-game {
+.share-game
+{
   font-size: 14px;
   color: white;
   height: 48px;
@@ -685,11 +725,25 @@ hr {
   flex: 1;
 }
 
+.restart {
+ font-size: 14px;
+  color: black;
+  height: 48px;
+  border-radius: 3px;
+  text-decoration: none;
+  flex: 1;
+
+
+}
+
 .score-board {
   margin-right: 12px;
 }
 
 .share-game {
+  margin-left: 12px;
+}
+.restart {
   margin-left: 12px;
 }
 
@@ -967,12 +1021,15 @@ hr {
   }
 
   .score-board,
-  .share-game {
+  .share-game,
+  .restart {
     font-size: 14px;
     height: 48px;
     border-radius: 3px;
   }
-
+  .restart {
+    margin-left: 12px;
+  }
   .score-board {
     margin-right: 12px;
   }
@@ -980,4 +1037,22 @@ hr {
   .share-game {
     margin-left: 12px;
   }
+  table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
 }
+
+td {
+  margin: 0;
+  padding: 0;
+  border: 2px solid black;
+  padding: 4px 17px;
+  width: 100%;
+  float:center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  background: #f0f4fc;
+}
+}
+ 
+

@@ -5,11 +5,11 @@ import { useGameState } from '../Context/gameState';
 import GameContainer from './gameContainer';
 import GameNav from './gameNav';
 import constants from '../constants';
-
+import ScoreBoard from './scoreBoard';
+import ShareInformation from './shareInfo';
 class Body extends React.Component {
   componentDidUpdate() {
     const { topic, setTopic } = this.props;
-    alert("updated topic: " + topic)
     if (topic === constants.gameStateTopic.gameRestart) {
       setTopic(constants.gameStateTopic.gameStart);
     }
@@ -17,32 +17,32 @@ class Body extends React.Component {
 
   showComponent() {
     const { topic } = this.props;
-    alert("showComponent() topic: " + topic)
     switch (topic) {
       case constants.gameStateTopic.gameReady:
-        alert("Alpha")
         break;
       case constants.gameStateTopic.gameRestart:
-        alert("Bravo")
         break;
       case constants.gameStateTopic.gameStart:
-        alert("Charlie")
         break;
       case constants.gameStateTopic.gameLoad:
-        alert("David")
+        break;
+      case constants.gameStateTopic.shareInformation:
+        return (
+        <ShareInformation />
+        );
         break;
       case 'auth':
-        alert("Ethan")
         break;
-      case 'DARS':
-        alert("DARS")
+      case 'scoreboard':
+        return (
+        <ScoreBoard />
+        );
+
         break;
       default:
-        alert("father")
         console.log('Your topic is UNDEFINED or a test value. Please set it to the appropriate value above.')
         break;
     }
-    alert("returning")
     return (
       <React.Fragment>
         <GameContainer startType={topic} />

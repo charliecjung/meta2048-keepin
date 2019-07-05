@@ -55,5 +55,9 @@
   },
   "devDependencies": {
     "prettier-eslint": "^9.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:charliecjung/meta2048-keepin.git",
+  "author": "Charlie Jung <32102793+charliecjung@users.noreply.github.com>",
+  "license": "MIT"
 }

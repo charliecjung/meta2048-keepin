@@ -2,26 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useGameState } from '../Context/gameState';
 import constants from '../constants';
-import ScoreBoard from './scoreBoard'
+import ScoreBoard from './scoreBoard';
 const GameNav = ({ setTopic }) => {
   const onClick = (event, topic) => {
-    alert("clicked: " + topic)
     setTopic(topic);
-    return (
-      <ScoreBoard />
-    );  
   };
   return (
     <React.Fragment>
       <div className="game-nav">
-        <button type="button" className="score-board btn" onClick={event => onClick(event, 'DARS')}>
-          SCORE BOARD
-          
-          
-       
+        <button type="button" className="score-board btn" onClick={event => onClick(event, constants.gameStateTopic.scoreBoard)}>
+          Scoreboard
         </button>
-        <button type="button" className="share-game btn">
-          SHARE GAME
+        <button type="button" className="share-game btn" onClick={event => onClick(event, constants.gameStateTopic.shareInformation)}>
+          Share Game
         </button>
       </div>
     </React.Fragment>

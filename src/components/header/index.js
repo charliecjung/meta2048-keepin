@@ -16,9 +16,11 @@ const Header = ({ setTopic }) => {
       <div className="heading">
         <button
           type="button"
-          className="restart-btn btn"
-          onClick={event => onClick(event, constants.gameStateTopic.gameRestart)}
-        />
+          className="restart btn"
+          onClick={event => onClick(event, constants.gameStateTopic.gameRestart)}>
+          Restart 
+          </button>
+        
         <ScoreContainer />
       </div>
     </React.Fragment>
