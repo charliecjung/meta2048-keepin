@@ -1,5 +1,36 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+
+
+## Important ##
+If you are encountering this error: `TypeError: fsevents is not a constructor`
+Then,
+
+From https://github.com/facebook/create-react-app/issues/6891: ** Using joshunger's answer. **
+
+Run:
+
+```javascript
+nvm use 12
+yarn init
+yarn add fsevents@1.2.8 
+You might have to run sudo for yarn add fsevents@1.2.8 doesn't seem to work just from
+a normal user.
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
